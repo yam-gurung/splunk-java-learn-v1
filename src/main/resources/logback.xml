@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--<configuration>
+    <appender name="socket" class="com.splunk.logging.TcpAppender">
+        <RemoteHost>127.0.0.1</RemoteHost>
+        <Port>9997</Port>
+        <layout class="ch.qos.logback.classic.PatternLayout">
+        <pattern>%date{ISO8601} [%thread] %level: %msg%n</pattern>
+        </layout>
+    </appender>
+
+    <logger name="splunk.logger" additivity="false" level="INFO">
+        <appender-ref ref="socket"/>
+    </logger>
+
+    <root level="INFO">
+        <appender-ref ref="socket"/>
+    </root>
+</configuration>-->
+
+<configuration>
+    <Appender name="hec" class="com.splunk.logging.HttpEventCollectorLogbackAppender">
+<url>https://localhost:8088</url>
+<token>14d7802d-3949-4ea2-b06b-389da97cf035</token>
+<index>java_splunk_hec_index</index>
+<disableCertificateValidation>true</disableCertificateValidation>
+<layout class="ch.qos.logback.classic.PatternLayout">
+<pattern>%msg</pattern>
+</layout>
+    </Appender>
+    <logger name ="splunk.logger" level="debug">
+<appender-ref ref="hec" />
+    </logger>
+</configuration>
