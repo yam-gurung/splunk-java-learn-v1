@@ -5,6 +5,7 @@ splunk java poc
 documentation link
 https://dev.splunk.com/enterprise/docs/devtools/java/logging-java/howtouseloggingjava/enableloghttpjava/
 
+https://help.splunk.com/en/data-management/collect-http-event-data/use-hec-in-splunk-enterprise/set-up-and-use-http-event-collector-in-splunk-web#:~:text=Send%20data%20to%20HTTP%20Event,raw%20endpoint%20for%20raw%20events
 
 
 to test connection to splunk
